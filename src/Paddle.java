@@ -3,7 +3,10 @@ import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 
-public class Paddle {
+public class Paddle extends Rectangle{
+	
+	int id; // 1 or 2 for players
+	int yVelocity;
 
 	Paddle() {
 		
