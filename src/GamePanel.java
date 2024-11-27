@@ -68,6 +68,14 @@ public class GamePanel extends JPanel implements Runnable{
 	}
 	
 	public void checkCollision() {
+		//keep ball within bounds
+		if(ball.y <= 0) {
+			ball.setYDirection(-ball.yVelocity);
+		}
+		if(ball.y >= GAME_HEIGHT - BALL_DIAMETER) {
+			ball.setYDirection(-ball.yVelocity);
+		}
+		
 		//stops paddle at window edges
 		if (paddle1.y <= 0)
 			paddle1.y=0;
@@ -77,6 +85,7 @@ public class GamePanel extends JPanel implements Runnable{
 			paddle2.y=0;
 		if (paddle2.y >= (GAME_HEIGHT - PADDLE_HEIGHT))
 			paddle2.y= GAME_HEIGHT - PADDLE_HEIGHT;
+		
 	}
 	
 	public void run() {
